@@ -43,6 +43,7 @@ const CasesList = lazy(() => import("./pages/dashboard/case/CasesList"));
 const AgreementProcess = lazy(() => import("./pages/dashboard/process/AgreementProcess"));
 const AIChatbot = lazy(() => import("./pages/dashboard/AIChatbot"));
 const LegalDocumentAnalyzer = lazy(() => import("./pages/dashboard/agreement/LegalDocumentAnalyzer"));
+const VideoAdvisor = lazy(() => import("./pages/dashboard/VideoAdvisor"));
 
 function App() {
   const { isAuthenticated, loading } = useAppSelector((state) => state.auth);
@@ -144,6 +145,7 @@ function App() {
               <Route path="/dashboard/agreement/summary" element={isAuthenticated ? <LegalDocumentAnalyzer /> : <Login />} />
               <Route path="/dashboard/case/case-details" element={isAuthenticated ? <CasesList /> : <Login />} />
               <Route path="/dashboard/process/summary" element={isAuthenticated ? <AgreementProcess /> : <Login />} />
+              <Route path="/dashboard/video-advisor" element={isAuthenticated ? <VideoAdvisor /> : <Login />} />
 
               {/* Fallback */}
               <Route path="*" element={<Navigate to="/" />} />

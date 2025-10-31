@@ -1,23 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FileText, ListTodo, Scale } from "lucide-react";
+import { FileText, ListTodo, Scale, Video } from "lucide-react";
 
 export default function Dashboard() {
   const navigate = useNavigate();
   
   const features = [
     {
-      name: "Upload Document",
-      description: "Upload and analyze legal documents with our AI-powered platform to understand key points, risks, and clauses.",
-      icon: FileText,
-      path: "/dashboard/role-selection",
-      color: "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400",
-      hoverColor: "hover:bg-blue-100 dark:hover:bg-blue-900/50"
-    },
-    {
       name: "Document Analysis",
       description: "AI-powered analysis of legal documents with risk scoring and clause breakdown.",
-      icon: ListTodo,
+      icon: FileText,
       path: "/dashboard/agreement/summary",
       color: "bg-green-50 text-green-600 dark:bg-green-900/30 dark:text-green-400",
       hoverColor: "hover:bg-green-100 dark:hover:bg-green-900/50"
@@ -29,6 +21,14 @@ export default function Dashboard() {
       path: "/dashboard/case/case-details",
       color: "bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400",
       hoverColor: "hover:bg-purple-100 dark:hover:bg-purple-900/50"
+    },
+    {
+      name: "1v1 Video Advisor",
+      description: "Connect with legal experts in real-time for personalized guidance and document review.",
+      icon: Video,
+      path: "/dashboard/video-advisor",
+      color: "bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400",
+      hoverColor: "hover:bg-blue-100 dark:hover:bg-blue-900/50"
     },
   ];
 
