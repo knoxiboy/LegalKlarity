@@ -10,6 +10,7 @@ import agreementRouter from "./routes/agreement.router";
 import adminRouter from "./routes/admin.router";
 import caseRouter from "./routes/case.routers";
 import aiRouter from "./routes/ai.router";
+import videoAdvisorRouter from "./routes/video-advisor.router";
 dotenv.config();
 
 const app = express();
@@ -40,6 +41,7 @@ app.use('/api/v1/agreements', agreementRouter);
 app.use('/api/v1/admins', adminRouter);
 app.use('/api/v1/cases', caseRouter);
 app.use('/api/v1', aiRouter);
+app.use('/api/v1/video-advisor', videoAdvisorRouter);
 app.get("/api/v1/active", (req: Request, res: Response) => {
     res.status(200).json(
       new ApiResponse(200, "Platform active")

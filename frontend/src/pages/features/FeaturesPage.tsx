@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Shield, MessageCircle, CheckCircle, Globe, Zap } from 'lucide-react';
+import { FileText, Shield, MessageCircle, CheckCircle, Globe, Zap, Video, Phone, Mic } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
 
@@ -386,6 +386,129 @@ const FeaturesPage: React.FC = () => {
                     However, the employer can terminate immediately for cause, while you must provide the full notice period.
                   </p>
                 </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* 1v1 Video Advisor Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 2.0 }}
+        className="mb-20"
+      >
+        <div className="flex items-center mb-8">
+          <Video className="h-10 w-10 text-green-600 dark:text-green-500 mr-4" />
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-green-500">1v1 Video Advisor</h2>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <motion.h3 
+              className="text-2xl font-semibold text-gray-900 dark:text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 2.2 }}
+            >
+              Connect with Legal Experts in Real-Time
+            </motion.h3>
+            <motion.p 
+              className="text-gray-600 dark:text-gray-400 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 2.3 }}
+            >
+              Get personalized guidance from qualified legal experts through secure video calls. Share your screen and documents for a thorough review.
+            </motion.p>
+            
+            <motion.div 
+              className="space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 2.4 }}
+            >
+              <div className="flex items-start">
+                <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0 dark:text-green-400" />
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">Live Document Review</h4>
+                  <p className="text-gray-600 dark:text-gray-400">Experts can see and highlight specific clauses in real-time</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0 dark:text-green-400" />
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">Secure & Confidential</h4>
+                  <p className="text-gray-600 dark:text-gray-400">End-to-end encrypted video calls</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <CheckCircle className="h-6 w-6 text-green-500 mt-1 mr-3 flex-shrink-0 dark:text-green-400" />
+                <div>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">Available Experts</h4>
+                  <p className="text-gray-600 dark:text-gray-400">Connect with specialists in various legal fields</p>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 2.5 }}
+              className="mt-8 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+              onClick={() => handleProtectedNavigation("/dashboard/video-advisor")}
+              disabled={isNavigating}
+            >
+              {isNavigating ? "Redirecting..." : "Start Video Consultation"}
+            </motion.button>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 2.6 }}
+          >
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
+              <h4 className="text-lg font-semibold text-white mb-4">Video Advisor Session</h4>
+              
+              <div className="bg-gray-800 rounded-lg p-4 mb-4">
+                <div className="flex items-center">
+                  <div className="h-12 w-12 rounded-full bg-gray-700 flex items-center justify-center mr-3">
+                    <span className="text-white font-medium">LA</span>
+                  </div>
+                  <div>
+                    <div className="font-medium text-white">Sarah Johnson</div>
+                    <div className="text-sm text-gray-400">Legal Counsel, 12+ years experience</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative bg-gray-800 rounded-lg h-48 flex items-center justify-center">
+                <div className="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
+                  You
+                </div>
+                <div className="text-gray-400 text-center">
+                  <Video className="h-8 w-8 mx-auto mb-2 text-gray-600" />
+                  <p>Video feed active</p>
+                </div>
+              </div>
+              
+              <div className="mt-4 flex space-x-2">
+                <button className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg flex items-center justify-center">
+                  <Phone className="h-5 w-5 mr-2" />
+                  End Call
+                </button>
+                <button className="flex-1 bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-lg flex items-center justify-center">
+                  <Mic className="h-5 w-5 mr-2" />
+                  Mute
+                </button>
+                <button className="flex-1 bg-gray-700 hover:bg-gray-600 text-white py-2 rounded-lg flex items-center justify-center">
+                  <Video className="h-5 w-5 mr-2" />
+                  Video
+                </button>
               </div>
             </div>
           </motion.div>
