@@ -131,7 +131,7 @@ export default function Navigation({
                 className={navigationMenuTriggerStyle()}
                 asChild
               >
-                <Link href={item.href || ""}>{item.title}</Link>
+                <Link to={item.href || ""}>{item.title}</Link>
               </NavigationMenuLink>
             ) : (
               <>
