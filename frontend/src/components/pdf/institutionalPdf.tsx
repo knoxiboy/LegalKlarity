@@ -22,7 +22,7 @@ function addTextBlock(
   }
 
   // Calculate height using font size
-  const fontSize = doc.internal.getFontSize();
+  const fontSize = doc.getFontSize();
   const lineHeight = fontSize * 0.3528 + 2; // convert pt → mm + padding
   let i = 0;
   // Use dynamic page height
