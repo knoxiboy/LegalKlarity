@@ -27,6 +27,27 @@ const HomePage: React.FC = () => {
 
         <div className="container-custom relative z-10">
           <div className="text-center max-w-4xl mx-auto">
+            {/* Hosting Disclaimer Note - Larger and detailed */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-8 flex justify-center"
+            >
+              <div className="max-w-2xl w-full text-center px-6 py-4 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 backdrop-blur-md border border-amber-200 dark:border-amber-800/50 shadow-lg">
+                <div className="flex items-center justify-center gap-2 mb-1 text-amber-800 dark:text-amber-200 font-bold">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-amber-500"></span>
+                  </span>
+                  ⚠️ Demo Mode vs Production
+                </div>
+                <p className="text-sm text-amber-700/90 dark:text-amber-300/90 leading-relaxed">
+                  The frontend is live on <b>Netlify</b>. However, our specialized AI models require significant computational power, so the <b>Backend runs locally</b> for this hackathon demo. We are optimizing for cloud deployment (Google Cloud/Railway).
+                </p>
+              </div>
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
