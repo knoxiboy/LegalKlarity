@@ -46,7 +46,7 @@ We empower users to:
 | **💾 Legal Vault** | Secure, encrypted storage for your personal legal documents. |
 | **🎨 Premium UI** | Accessible dark/light mode with a "Maroon & Gold" professional aesthetic. |
 
-## �️ Technology Stack
+## 🛠️ Technology Stack
 
 ### Frontend
 ![React](https://img.shields.io/badge/React_18-20232A?style=flat&logo=react&logoColor=61DAFB)
@@ -110,16 +110,6 @@ The app will be available at `http://localhost:5173`.
 
 ---
 
-## 👥 Team
-
-Built with ❤️ by the **LegalKlarity Team** dont take roles seriously just for fun 😂:
-
-*   **Karan Tripathi** - Founder 
-*   **Saurav Sankar** - Co-Founder & CEO 
-*   **Tejash** - CTO 
-*   **Divya** - Frontend Developer
-*   **Shruthi** - Backend Developer
-
 ## 📞 Contact
 
 *   **Email**: oyelurker@gmail.com
@@ -127,5 +117,5 @@ Built with ❤️ by the **LegalKlarity Team** dont take roles seriously just fo
 
 ---
 
-**Made for Gene AI Exchange Hackathon 25** 🧬
+**Made for Gen AI Exchange Hackathon 25** 🧬
 *Democratizing legal access in India.*
