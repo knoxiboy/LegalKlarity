@@ -27,6 +27,28 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Rate Limiting Middleware (In-Memory)
+const rateLimitMap = new Map();
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const ip = req.ip || req.connection.remoteAddress || 'unknown';
+  const now = Date.now();
+  if (!rateLimitMap.has(ip)) {
+    rateLimitMap.set(ip, { count: 1, startTime: now });
+    return next();
+  }
+  const record = rateLimitMap.get(ip);
+  if (now - record.startTime > 60000) {
+    rateLimitMap.set(ip, { count: 1, startTime: now });
+    return next();
+  }
+  if (record.count >= 100) {
+    res.status(429).json(new ApiResponse(429, "Too many requests, please try again later"));
+    return;
+  }
+  record.count++;
+  next();
+});
+
 // Firebase connection check middleware (optional, for debugging)
 app.use((req, res, next) => {
   if (!admin.apps.length) {

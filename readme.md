@@ -61,6 +61,11 @@ We empower users to:
 ![Python](https://img.shields.io/badge/Python_3.9+-3776AB?style=flat&logo=python&logoColor=white)
 ![Gemini AI](https://img.shields.io/badge/Google_Gemini_API-8E75B2?style=flat&logo=google&logoColor=white)
 
+### SDLC & Security Integration
+* **Input Validation:** Strict payload constraints using `express-validator` ensuring deterministic AI prompt injections and data sanitize.
+* **Basic Rate Limiting:** Global in-memory dynamic IP rate limiter implemented across the Express backend to protect AI and standard routes against burst traffic.
+* **Architecture Integrity:** Config files (`Dockerfile`, `cloudbuild.yaml`, and `app.yaml`) established to facilitate CI/CD pipelines.
+
 ---
 
 ## ⚠️ Hosting & Demo Note
