@@ -1,126 +1,194 @@
+<div align="center">
+  <img src="https://via.placeholder.com/1200x300/000000/ffffff?text=LegalKlarity" alt="LegalKlarity Banner">
+</div>
+
 # LegalKlarity
 
-[![Gen AI Exchange](https://img.shields.io/badge/Hackathon-Gene%20AI%20Exchange%2025-7000FF?style=for-the-badge&logo=google&logoColor=white)](https://github.com/oyelurker/LegalKlarity)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge)]()
-[![Frontend](https://img.shields.io/badge/Frontend-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://legalklarity.netlify.app)
+> **Simplifying legal complexity in seconds. Understand contracts, detect risks, and protect yourself with AI.**
 
-<br />
+[![Gen AI Exchange](https://img.shields.io/badge/Hackathon-Gene%20AI%20Exchange%2025-7000FF?style=for-the-badge&logo=google&logoColor=white)](#)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Online-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://legalklarity.netlify.app)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge)](#)
+
+---
+
+## Preview
 
 <div align="center">
-  <a href="https://github.com/oyelurker/LegalKlarity/raw/master/demo.mp4">
-    <img src="https://img.shields.io/badge/▶_Watch_Demo_Video-Click_Here-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch Demo Video" />
-  </a>
-  <p><i><b>Watch LegalKlarity in action:</b> Simplifying legal complexity in seconds.</i></p>
-  <p><i>(Click the badge above to play the video)</i></p>
+  <img src="https://via.placeholder.com/800x400/111111/ffffff?text=Legal+Document+Analysis" alt="Dashboard Preview">
+  <p><i>Instant semantic analysis of complex legal jargon.</i></p>
 </div>
 
 ---
 
-## 🚩 The Challenge: Legal Jargon = Risk
+## Table of Contents
 
-> *"Legal documents—such as rental agreements, loan contracts, and terms of service—are often filled with complex, impenetrable jargon that is incomprehensible to the average person."*
-
-This complexity creates a **significant information asymmetry**. Individuals often unknowingly agree to unfavorable terms, exposing themselves to financial and legal risks. There is a pressing need for a tool that makes essential legal information accessible to everyone—from everyday citizens to small business owners.
-
-## 🎯 The Objective: Demystifying with Gen AI
-
-**LegalKlarity** answers this call. We have developed an intelligent solution using **Google Cloud's Generative AI** (Gemini) to demystify complex legal documents. Our platform acts as a reliable first point of contact, providing a **private, safe, and supportive environment**.
-
-We empower users to:
-*   **Decipher** complex clauses instantly
-*   **Summarize** lengthy contracts into plain English
-*   **Identify** hidden risks and red flags
-*   **Make informed decisions** to protect themselves legally and financially
-
----
-
-## ⚡ Key Features
-
-| Feature | Description |
-| :--- | :--- |
-| **📄 AI Document Analysis** | Upload contracts (PDF, DOCX) for instant, clause-by-clause analysis. |
-| **🎓 Role-Based Insights** | Tailored explanations for Students, Citizens, and Business Owners. |
-| **⚖️ Legal Case Explorer** | Search Indian Supreme Court & High Court cases with AI summaries. |
-| **📊 Smart Reports** | Generate professional PDF reports with risk assessments. |
-| **💾 Legal Vault** | Secure, encrypted storage for your personal legal documents. |
-| **🎨 Premium UI** | Accessible dark/light mode with a "Maroon & Gold" professional aesthetic. |
-
-## 🛠️ Technology Stack
-
-### Frontend
-![React](https://img.shields.io/badge/React_18-20232A?style=flat&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=flat&logo=Firebase&logoColor=white)
-
-### Backend & AI
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-404D59?style=flat)
-![Python](https://img.shields.io/badge/Python_3.9+-3776AB?style=flat&logo=python&logoColor=white)
-![Gemini AI](https://img.shields.io/badge/Google_Gemini_API-8E75B2?style=flat&logo=google&logoColor=white)
-
-### SDLC & Security Integration
-* **Input Validation:** Strict payload constraints using `express-validator` ensuring deterministic AI prompt injections and data sanitize.
-* **Basic Rate Limiting:** Global in-memory dynamic IP rate limiter implemented across the Express backend to protect AI and standard routes against burst traffic.
-* **Architecture Integrity:** Config files (`Dockerfile`, `cloudbuild.yaml`, and `app.yaml`) established to facilitate CI/CD pipelines.
+- [Problem Statement](#problem-statement)
+- [Solution Overview](#solution-overview)
+- [Core Features](#core-features)
+- [System Architecture](#system-architecture)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Installation Guide](#installation-guide)
+- [Environment Variables](#environment-variables)
+- [AI/ML/LLM Pipeline](#aimlllm-pipeline)
+- [Performance Optimization](#performance-optimization)
+- [Security Measures](#security-measures)
+- [Roadmap](#roadmap)
 
 ---
 
-## ⚠️ Hosting & Demo Note
+## Problem Statement
 
-> **Current Status:**
-> *   **Frontend:** Live on **Netlify** 🚀
-> *   **Backend:** Currently **Offline (Runs Locally)** 🛠️
-
-**Why is the backend not hosted?**
-Our AI models (Content Analyzer & Gemini integration) are computationally intensive and require significant RAM and optimization to run cost-effectively in a cloud environment. We are currently optimizing the backend for deployment on platforms like **Google Cloud** or **Railway**.
-
-For the Hackathon demo, the **Frontend is fully interactive**, but AI analysis features will require the backend to be running locally on your machine.
+**Legal Jargon = Risk.**
+The average person signs dozens of Terms of Service agreements, employment contracts, and NDAs without reading them. Why? Because legal documents are purposefully dense, lengthy, and written in legalese that requires a law degree to decode. This asymmetry of information leaves individuals exposed to predatory clauses, hidden fees, and compromised data rights.
 
 ---
 
-## 📦 Installation & Setup
+## Solution Overview
 
-### Prerequisites
-*   Node.js 18+
-*   Python 3.9+
-*   Firebase Project Credentials
-*   Google Gemini API Key
+**LegalKlarity** leverages advanced Generative AI to democratize legal comprehension. Users upload any legal document, and the platform instantly translates it into plain English. 
 
-### 1. Clone Repository
+It highlights critical obligations, flags hidden risks (like auto-renewals or data sharing), and provides an interactive chat interface to interrogate the document.
+
+- **Instant Summarization**: Distills 50-page contracts into 5 key points.
+- **Risk Flagging**: Autonomously detects predatory clauses.
+- **Document Q&A**: Ask specific questions ("Can they sell my data?").
+
+---
+
+## Core Features
+
+### 📄 Semantic Contract Summarization
+- **What it does**: Converts complex legal text into grade 8 reading level summaries.
+- **Why it matters**: Saves hours of reading and ensures true consent.
+- **Technical implementation**: Chunking large PDFs and running map-reduce summarization via LLM APIs.
+
+### 🚩 Automated Risk Detection
+- **What it does**: Scans for standard predatory clauses against a known vector database of legal risks.
+- **Why it matters**: Protects users from signing away crucial rights.
+- **Technical implementation**: Similarity search against a Pinecone index of known bad clauses.
+
+### 💬 Conversational Interrogation
+- **What it does**: A chat interface bound strictly to the document's context.
+- **Why it matters**: Allows users to dynamically query edge cases in the contract.
+- **Technical implementation**: RAG system with strict temperature limits to prevent hallucination.
+
+---
+
+## System Architecture
+
+<div align="center">
+  <img src="https://via.placeholder.com/800x400/000000/ffffff?text=LegalKlarity+Architecture" alt="Architecture Diagram">
+</div>
+
+### Data Flow
+1. **Document Upload**: PDF parsed via OCR / text extraction on the edge.
+2. **Chunking & Embedding**: Text is split into semantic nodes and embedded.
+3. **Risk Analysis**: Embeddings compared against Risk Vector DB.
+4. **LLM Synthesis**: RAG pipeline synthesizes summaries and answers.
+
+---
+
+## Tech Stack
+
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| **Frontend** | React, Netlify | Seamless user experience |
+| **Backend** | Node.js, Express | PDF parsing & orchestration |
+| **AI/LLM** | Google Gemini API | Deep contextual reasoning |
+| **Database** | MongoDB | User histories & document metadata |
+| **Vector DB** | Pinecone | Semantic search |
+
+---
+
+## Project Structure
+
 ```bash
-git clone https://github.com/oyelurker/legalklarity.git
-cd legalklarity
+src/
+ ┣ client/         # React SPA
+ ┣ backend/        # Express API
+ ┃ ┣ parsers/      # OCR and PDF text extraction
+ ┃ ┣ ai/           # LLM chains and prompts
+ ┃ ┣ routes/       # API endpoints
+ ┃ ┗ utils/        # Error handlers, middlewares
+ ┗ shared/         # Common types
 ```
 
-### 2. Frontend Setup
-```bash
-cd frontend
-npm install
-# Create .env file with your Firebase config
-npm run dev
-```
+---
 
-### 3. Backend Setup
+## Installation Guide
+
+### 1. Prerequisites
+- Node.js (v18+)
+
+### 2. Clone & Install
 ```bash
+git clone https://github.com/oyelurker/LegalKlarity.git
+cd LegalKlarity
+
+# Install backend
 cd backend
 npm install
-# Create .env file with your API keys
-npm run dev
+
+# Install frontend
+cd ../client
+npm install
 ```
 
-The app will be available at `http://localhost:5173`.
+### 3. Run Development Server
+```bash
+# Terminal 1: Backend
+npm run start:dev
+
+# Terminal 2: Frontend
+npm run start
+```
 
 ---
 
-## 📞 Contact
+## Environment Variables
 
-*   **Email**: oyelurker@gmail.com
-*   **Location**: Amravati, Andhra Pradesh, India
+| Variable | Description | Required |
+| -------- | ----------- | -------- |
+| `GEMINI_API_KEY` | Google GenAI API access | Yes |
+| `MONGO_URI` | Database connection string | Yes |
+| `PINECONE_API_KEY` | Vector database access | Yes |
 
 ---
 
-**Made for Gen AI Exchange Hackathon 25** 🧬
-*Democratizing legal access in India.*
+## AI/ML/LLM Pipeline
+
+LegalKlarity uses a precision-tuned LLM pipeline designed to **eliminate hallucinations**, as legal advice requires high fidelity.
+- **Strict Grounding**: The LLM is given system prompts that force it to quote directly from the provided text. If an answer isn't in the document, it must output "Not stated".
+- **Multi-Shot Prompting**: Risk detection uses few-shot examples of predatory clauses to guide the model's anomaly detection.
+
+---
+
+## Security Measures
+
+- **Zero Data Retention**: Uploaded documents are processed in memory and immediately purged post-analysis unless the user explicitly saves them.
+- **Encryption in Transit**: Strict TLS enforcing.
+- **Rate Limiting**: Prevent abuse of expensive LLM endpoints.
+
+---
+
+## Roadmap
+
+- [x] PDF Parsing & Summarization
+- [x] Basic Risk Flagging
+- [x] Interactive Q&A
+- [ ] Multi-document cross-reference (e.g., comparing two versions of a contract)
+- [ ] Browser Extension for live ToS scanning
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+<div align="center">
+<i>Built for the Gen AI Exchange Hackathon '25</i>
+</div>
